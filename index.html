@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学校信息整合</title>
+    <meta
+      name="description"
+      content="学校信息整合页面：按学校档次和省份筛选高校学院报名信息。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">School Intake Hub</p>
+          <h1>学校信息整合</h1>
+          <p class="hero-copy">
+            左侧筛选高校档次与省份，右侧查看学院报名信息。报名未开始显示为灰色，已结束显示为划线，进行中的条目正常展示。
+          </p>
+        </div>
+        <div class="hero-stats" id="heroStats"></div>
+      </header>
+
+      <section class="layout">
+        <aside class="panel filters">
+          <div class="panel-header">
+            <h2>筛选条件</h2>
+            <button class="ghost-button" id="resetFilters" type="button">重置</button>
+          </div>
+
+          <label class="field">
+            <span>高校档次</span>
+            <select id="rankFilter">
+              <option value="全部">全部</option>
+              <option value="华五">华五</option>
+              <option value="C9">C9</option>
+              <option value="985">985</option>
+              <option value="211">211</option>
+              <option value="其他">其他</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>省份</span>
+            <select id="provinceFilter"></select>
+          </label>
+
+          <div class="tips">
+            <h3>使用说明</h3>
+            <ul>
+              <li>点击右侧条目可直接跳转到学院链接。</li>
+              <li>未开始的报名条目会显示为灰色。</li>
+              <li>已结束的报名条目会显示为划线样式。</li>
+            </ul>
+          </div>
+        </aside>
+
+        <main class="panel results">
+          <div class="panel-header">
+            <h2>学院信息</h2>
+            <div class="result-meta" id="resultMeta"></div>
+          </div>
+
+          <div class="active-filters" id="activeFilters"></div>
+          <div class="list" id="resultList"></div>
+        </main>
+      </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
